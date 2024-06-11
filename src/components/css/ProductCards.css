@@ -1,0 +1,82 @@
+.product-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-wrapper .product-carousel{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    width: 80%;
+    height: 90%;
+}
+
+.product-carousel::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.product-carousel.dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.product-carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+
+.product-carousel .card{
+    scroll-snap-align: start;
+    background: #A46538;
+    padding: 20px;
+    list-style: none;
+    border-radius: 25px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    width: 328px;
+}
+
+.product-carousel .card div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-carousel .card img{
+    width: 100%;
+    height: 288px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.product-carousel .card .name{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.product-carousel .card .price{
+    font-size: 25px;
+    font-weight: lighter;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.product-carousel .card .description{
+    font-size: 23px;
+    font-weight: lighter;
+    color: #ffffff;
+}

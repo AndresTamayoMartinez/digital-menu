@@ -1,0 +1,66 @@
+.category-wrapper{
+    padding-top: 10px;
+    position: relative;
+    width: 80%;
+}
+
+.category-wrapper .category-carousel{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    width: 100%;
+}
+
+.category-carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.category-carousel :where(.card, img){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-carousel.dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.category-carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+
+.category-carousel .card{
+    scroll-snap-align: start;
+    padding: 15px;
+    height: 35px;
+    list-style: none;
+    background: none;
+    border: solid 4px #A46538;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50px;
+    color: #A46538;
+    font-size: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.category-carousel .card:hover{
+    background: #A46538;
+    color: #FFFFFF;
+}
+
+.category-carousel .card.active{
+    background: #A46538;
+    color: #FFFFFF;
+}
